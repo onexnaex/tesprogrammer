@@ -1,3 +1,4 @@
+<?php $instansi = SiteHelper::instansi();?>
 <!DOCTYPE html>
 <!--<html dir="rtl" lang="ar">-->
 <html>
@@ -5,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?= 'ADEL CCG - ' . esc($title) ?></title>
+    <title><?= $instansi->nama_app.' - ' . esc($title) ?></title>
     <meta name="description" content="Garment Factory Process">
     <meta name="keyword" content="garment,factory,khonkaen,ocomshop">
     <meta name="author" content="ocomshop">

@@ -133,7 +133,7 @@ class Kategori extends BaseController
 	{
 		$response = array();
 		
-		$id = $this->request->getPost('id_kategori');
+		$id = $this->request->getPost('id');
 		
 		if (!$this->validation->check($id, 'required|numeric')) {
 

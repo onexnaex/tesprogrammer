@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class KategoriModel extends Model {
     
 	protected $table = 'kategori';
-	protected $primaryKey = 'id';
+	protected $primaryKey = 'id_kategori';
 	protected $returnType = 'object';
 	protected $useSoftDeletes = false;
 	protected $allowedFields = ['nama_kategori'];

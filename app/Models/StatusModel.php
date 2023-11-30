@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class StatusModel extends Model {
     
 	protected $table = 'status';
-	protected $primaryKey = 'id';
+	protected $primaryKey = 'id_status';
 	protected $returnType = 'object';
 	protected $useSoftDeletes = false;
 	protected $allowedFields = ['nama_status'];

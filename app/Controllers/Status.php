@@ -133,7 +133,7 @@ class Status extends BaseController
 	{
 		$response = array();
 		
-		$id = $this->request->getPost('id_status');
+		$id = $this->request->getPost('id');
 		
 		if (!$this->validation->check($id, 'required|numeric')) {
 

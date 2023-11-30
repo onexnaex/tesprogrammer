@@ -16,11 +16,11 @@
           <table class="table table-bordered table-striped">
           <tr>
               <td style="text-align:right;width:30%;">Id</td>
-              <td><?php echo $model->id_kategori;?></td>
+              <td><?php echo $model->id_status;?></td>
             </tr>
             <tr>
-              <td style="text-align:right;">Kategori</td>
-              <td><?php echo $model->nama_kategori;?></td>
+              <td style="text-align:right;">Status</td>
+              <td><?php echo $model->nama_status;?></td>
             </tr>
           </table>
           <div class="mt-2 ">
