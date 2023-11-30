@@ -3,19 +3,19 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class LoketModel extends Model {
+class KategoriModel extends Model {
     
-	protected $table = 'loket';
+	protected $table = 'kategori';
 	protected $primaryKey = 'id';
 	protected $returnType = 'object';
 	protected $useSoftDeletes = false;
-	protected $allowedFields = ['loket','suara','aktif'];
+	protected $allowedFields = ['nama_kategori'];
 	protected $useTimestamps = false;
 	protected $createdField  = 'created_at';
 	protected $updatedField  = 'updated_at';
 	protected $deletedField  = 'deleted_at';
 	protected $validationRules    = [
-		'loket' => ['label' => 'Loket', 'rules' => 'required|min_length[0]|max_length[150]'],
+		'nama_kategori' => ['label' => 'nama_kategori', 'rules' => 'required|min_length[0]|max_length[100]'],
 
 	];
 	protected $validationMessages = [];
