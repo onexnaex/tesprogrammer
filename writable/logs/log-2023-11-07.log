@@ -1,0 +1,77 @@
+CRITICAL - 2023-11-07 03:21:48 --> Undefined property: App\Controllers\Loket::$groupModel
+in APPPATH\Controllers\Loket.php on line 54.
+ 1 APPPATH\Controllers\Loket.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Loket::$groupModel', 'C:\\xampp81\\htdocs\\ci4\\app\\Controllers\\Loket.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Loket->postAll()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Loket))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
+CRITICAL - 2023-11-07 03:33:18 --> Undefined property: App\Controllers\Loket::$groupModel
+in APPPATH\Controllers\Loket.php on line 54.
+ 1 APPPATH\Controllers\Loket.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Loket::$groupModel', 'C:\\xampp81\\htdocs\\ci4\\app\\Controllers\\Loket.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Loket->postAll()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Loket))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
+CRITICAL - 2023-11-07 03:35:29 --> Undefined property: stdClass::$username
+in APPPATH\Views\loket\form.php on line 39.
+ 1 APPPATH\Views\loket\form.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$username', 'C:\\xampp81\\htdocs\\ci4\\app\\Views\\loket\\form.php', 39)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp81\\htdocs\\ci4\\app\\Views\\loket\\form.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('loket/form', [], true)
+ 5 APPPATH\Controllers\Loket.php(47): view('loket/form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Loket->getAdd()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Loket))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
+CRITICAL - 2023-11-07 04:08:15 --> There is no data to insert.
+in SYSTEMPATH\BaseModel.php on line 768.
+ 1 SYSTEMPATH\BaseModel.php(768): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\Loket.php(106): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Loket->postSave()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Loket))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
+CRITICAL - 2023-11-07 07:27:44 --> Undefined variable $instansi
+in APPPATH\Views\layout\antrian.php on line 28.
+ 1 APPPATH\Views\layout\antrian.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $instansi', 'C:\\xampp81\\htdocs\\ci4\\app\\Views\\layout\\antrian.php', 28)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp81\\htdocs\\ci4\\app\\Views\\layout\\antrian.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/antrian', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('ambilantrian/index', [], true)
+ 6 APPPATH\Controllers\AmbilAntrian.php(26): view('ambilantrian/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AmbilAntrian->getIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AmbilAntrian))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
+CRITICAL - 2023-11-07 09:58:50 --> Undefined property: stdClass::$deskripsi
+in APPPATH\Views\layout\antrian.php on line 53.
+ 1 APPPATH\Views\layout\antrian.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$deskripsi', 'C:\\xampp81\\htdocs\\ci4\\app\\Views\\layout\\antrian.php', 53)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp81\\htdocs\\ci4\\app\\Views\\layout\\antrian.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/antrian', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('ambilantrian/index', [], true)
+ 6 APPPATH\Controllers\AmbilAntrian.php(26): view('ambilantrian/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AmbilAntrian->getIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AmbilAntrian))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
+CRITICAL - 2023-11-07 09:59:29 --> Undefined property: stdClass::$deskripsi
+in APPPATH\Views\layout\antrian.php on line 53.
+ 1 APPPATH\Views\layout\antrian.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$deskripsi', 'C:\\xampp81\\htdocs\\ci4\\app\\Views\\layout\\antrian.php', 53)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp81\\htdocs\\ci4\\app\\Views\\layout\\antrian.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/antrian', [], true)
+ 5 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('ambilantrian/index', [], true)
+ 6 APPPATH\Controllers\AmbilAntrian.php(26): view('ambilantrian/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\AmbilAntrian->getIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AmbilAntrian))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp81\\htdocs\\ci4\\public\\index.php')
