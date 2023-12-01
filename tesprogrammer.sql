@@ -11,7 +11,7 @@
  Target Server Version : 100132
  File Encoding         : 65001
 
- Date: 30/11/2023 16:46:40
+ Date: 01/12/2023 16:58:36
 */
 
 SET NAMES utf8mb4;
@@ -67,11 +67,12 @@ CREATE TABLE `produk`  (
   INDEX `produk_ibfk_1`(`kategori_id` ASC) USING BTREE,
   CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id_kategori`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `produk_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `status` (`id_status`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of produk
 -- ----------------------------
+INSERT INTO `produk` VALUES (1, 'tes', 1, 1, 3);
 
 -- ----------------------------
 -- Table structure for status
@@ -81,11 +82,12 @@ CREATE TABLE `status`  (
   `id_status` int NOT NULL AUTO_INCREMENT,
   `nama_status` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_status`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of status
 -- ----------------------------
+INSERT INTO `status` VALUES (3, 'tes');
 
 -- ----------------------------
 -- Table structure for tb_group
@@ -164,7 +166,7 @@ CREATE TABLE `tb_user`  (
 -- ----------------------------
 -- Records of tb_user
 -- ----------------------------
-INSERT INTO `tb_user` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', '', '2023-11-30 09:02:01', '1', 1, 1);
+INSERT INTO `tb_user` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', '', '2023-12-01 07:10:41', '1', 1, 1);
 INSERT INTO `tb_user` VALUES (2, 'pegawai', '047aeeb234644b9e2d4138ed3bc7976a', 'pegawai@pegawai.com', '', NULL, '123456', 2, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
