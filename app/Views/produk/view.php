@@ -14,26 +14,30 @@
         <!-- /.card-header -->
         <div class="card-body">
           <table class="table table-bordered table-striped">
+            <?php foreach ($model as $key => $value) {?>
+             
+        
           <tr>
               <td style="text-align:right;width:30%;">Id</td>
-              <td><?php echo $model->id_produk;?></td>
+              <td><?php echo $value->id_produk;?></td>
             </tr>
             <tr>
               <td style="text-align:right;">Produk</td>
-              <td><?php echo $model->nama_produk;?></td>
+              <td><?php echo $value->nama_produk;?></td>
             </tr>
             <tr>
               <td style="text-align:right;">Harga</td>
-              <td><?php echo $model->harga;?></td>
+              <td><?php echo $value->harga;?></td>
             </tr>
             <tr>
               <td style="text-align:right;">Kategori</td>
-              <td><?php echo $model->nama_kategori;?></td>
+              <td><?php echo $value->nama_kategori;?></td>
             </tr>
             <tr>
               <td style="text-align:right;">Status</td>
-              <td><?php echo $model->status;?></td>
+              <td><?php echo $value->nama_status;?></td>
             </tr>
+            <?php }?>
           </table>
           <div class="mt-2 ">
           <a href="<?php echo site_url($controller);?>" class="btn btn-warning"><span class="px-1 far fa-arrow-alt-circle-left"></span>Back</a>

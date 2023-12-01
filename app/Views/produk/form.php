@@ -53,7 +53,7 @@
               </div>
               <div class="form-group">
                 <label for="Status">Status</label>
-                <select name="id_status" id="id_status" class="form-control">
+                <select name="status_id" id="status_id" class="form-control">
                   <?php foreach ($status as $key => $value) { ?>
                     <option value="<?php echo $value->id_status;?>" <?php if($value->id_status== old('id_status',$model->status_id)) echo "selected"; ?>><?php echo $value->nama_status;?></option>
                   <?php }?>

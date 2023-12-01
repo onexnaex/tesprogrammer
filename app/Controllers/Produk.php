@@ -59,14 +59,16 @@ class Produk extends BaseController
 	{
  		$response = $data['data'] = array();	
 
-		$result = $this->produkModel->select()->findAll();
+		//$result = $this->produkModel->select()->findAll();
+        $result = $this->produkModel->showingalldata();
+        
 		
 		foreach ($result as $key => $value) {
 							
 			$ops = '<div class="btn-group">';
-            $ops .= '<a class="col px-1 text-info" href="'.site_url( $this->data['controller'].'/view/'.$value->id).'" title="view"><i class="fa-solid fa-eye"></i> </a>';
-			$ops .= '<a class="col px-1 text-orange" href="'.site_url( $this->data['controller'].'/add/'.$value->id).'" title="edit"><i class="fa-solid fa-pen-to-square"></i>  </a>';
-			$ops .= '<a class="col px-1 text-danger" href="#" onClick="remove('. $value->id .')" title="delete"><i class="fa-solid fa-trash"></i></a>';
+            $ops .= '<a class="col px-1 text-info" href="'.site_url( $this->data['controller'].'/view/'.$value->id_produk).'" title="view"><i class="fa-solid fa-eye"></i> </a>';
+			$ops .= '<a class="col px-1 text-orange" href="'.site_url( $this->data['controller'].'/add/'.$value->id_produk).'" title="edit"><i class="fa-solid fa-pen-to-square"></i>  </a>';
+			$ops .= '<a class="col px-1 text-danger" href="#" onClick="remove('. $value->id_produk .')" title="delete"><i class="fa-solid fa-trash"></i></a>';
 			$ops .= '</div>';
 
 			$data['data'][$key] = array(
@@ -77,7 +79,6 @@ class Produk extends BaseController
 				$ops				
 			);
 		} 
-
 		return $this->response->setJSON($data);		
 	}
 
@@ -89,8 +90,8 @@ class Produk extends BaseController
 		$fields['id_produk'] = $this->request->getPost('id');
         $fields['nama_produk'] = $this->request->getPost('nama_produk');
         $fields['harga'] = $this->request->getPost('harga');
-        $fields['id_kategori'] = $this->request->getPost('id_kategori');
-        $fields['id_status'] = $this->request->getPost('id_status');
+        $fields['kategori_id'] = $this->request->getPost('kategori_id');
+        $fields['status_id'] = $this->request->getPost('status_id');
 
        
 
@@ -168,6 +169,80 @@ class Produk extends BaseController
 		}	
 	
         return $this->response->setJSON($response);		
-	}	
+	}
+    
+    public function getSynproduk(){
+
+       
+      
+        // Send request
+        try {
+            $apiURL = 'https://recruitment.fastprint.co.id/tes/api_tes_programmer';
+         
+        /* eCurl */
+        $curl = curl_init($apiURL);
+   
+        /* Data */
+        $data = [
+            'username'=>'tesprogrammer011223C17','password'=>'1fba08ef28cc1656bfadf6ad0f460261'
+        ];
+   
+        /* Set JSON data to POST */
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            
+        /* Define content type */
+        //curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            
+        /* Return json */
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            
+        /* make request */
+        $result = curl_exec($curl);
+
+        $tempproduk = json_decode($result);
+       // var_dump($tempproduk->data);
+       
+        foreach ($tempproduk->data as $key => $value) {
+            $cek = $this->produkModel->getRecord($value->id_produk);
+            if($cek > 0 )
+            {
+                $data = [
+                    'nama_produk'   =>  $value->nama_produk,
+                    'harga'   =>  $value->harga,
+                    'kategori_id'   =>  $value->kategori_id,
+                    'status_id'   => $value->status_id,
+                ];
+                
+                // Inserts data and returns inserted row's primary key
+                $this->produkModel->update($value->id_produk,$data);         
+            }
+            else
+            {
+                $data = [
+                    'id_produk' =>  $value->id_produk,
+                    'nama_produk'   =>  $value->nama_produk,
+                    'harga'   =>  $value->harga,
+                    'kategori_id'   =>  $value->kategori_id,
+                    'status_id'   => $value->status_id,
+                ];
+                
+                // Inserts data and returns inserted row's primary key
+                $this->produkModel->insert($data);
+                
+            }   
+           
+        }
+             
+        /* close curl */
+        curl_close($curl);
+          
+        } catch (\Exception $e) {
+            echo 'Message: ' .$e->getMessage();
+        }
+          
+       
+
+   }
+
 		
 }	

@@ -46,9 +46,9 @@ class ProdukModel extends Model {
     public function showingalldata()
 	{
 		$db      = \Config\Database::connect();
-		$builder = $db->table('produk');
-		$builder->join('status','produk.id_status=status.id_status');
-        $builder->join('kategori','produk.id_kategori=kategori.id_kategori');
+		$builder = $db->table($this->table);
+		$builder->join('status','produk.status_id=status.id_status');
+        $builder->join('kategori','produk.kategori_id=kategori.id_kategori');
 		$builder->select('produk.*,status.nama_status,kategori.nama_kategori');
 		$query = $builder->get();
 		return $query->getResult();
@@ -57,12 +57,21 @@ class ProdukModel extends Model {
     public function showingdetaildata($id)
 	{
 		$db      = \Config\Database::connect();
-		$builder = $db->table('produk');
-		$builder->join('status','produk.id_status=status.id_status');
-        $builder->join('kategori','produk.id_kategori=kategori.id_kategori');
+		$builder = $db->table($this->table);
+		$builder->join('status','produk.status_id=status.id_status');
+        $builder->join('kategori','produk.kategori_id=kategori.id_kategori');
 		$builder->select('produk.*,status.nama_status,kategori.nama_kategori');
         $builder->where('id_produk',$id);
-		$query = $builder->first();
+		$query = $builder->get();
+		return $query->getResult();
+	}
+
+	public function getRecord($id)
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table($this->table);
+		$builder->where('id_produk',$id);
+		$query = $builder->countAllResults();
 		return $query;
 	}
 	
