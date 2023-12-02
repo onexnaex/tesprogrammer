@@ -10,6 +10,9 @@ apabila dijalank dilokal komputer bisa menggunakan perintah php spark serve dilo
 # File database
 Sudah disertakan dalam repo ini dengan file tesprogrammer.sql
 
+# Default Login Aplikasi
+menggunakan username : admin password : admin
+
 
 
 
