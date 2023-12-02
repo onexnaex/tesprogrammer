@@ -28,6 +28,12 @@ class Produk extends BaseController
         $this->data['kategori'] = $this->kategoriModel->findAll();
         $this->data['status'] = $this->statusModel->findAll();
 
+        if($this->session->get('logged_in')==null) 
+		{
+			header('Location: '.base_url());
+			exit();
+		}
+
 	}
 	
 	public function getIndex()
@@ -173,7 +179,7 @@ class Produk extends BaseController
     
     public function getSynproduk(){
 
-       
+        $response = array();
       
         // Send request
         try {
@@ -181,18 +187,17 @@ class Produk extends BaseController
          
         /* eCurl */
         $curl = curl_init($apiURL);
-   
+        date_default_timezone_set('Asia/Ujung_Pandang');
         /* Data */
+        $tempformatusername = "tesprogrammer".date('dmy')."C".date("H");
+        $temppassword = md5('bisacoding-'.date('d-m-y'));
+        //var_dump($tempformatusername);
         $data = [
-            'username'=>'tesprogrammer011223C17','password'=>'1fba08ef28cc1656bfadf6ad0f460261'
-        ];
+            'username'=>$tempformatusername,'password'=>  $temppassword];
    
         /* Set JSON data to POST */
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            
-        /* Define content type */
-        //curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            
+       
         /* Return json */
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             
@@ -200,17 +205,23 @@ class Produk extends BaseController
         $result = curl_exec($curl);
 
         $tempproduk = json_decode($result);
-       // var_dump($tempproduk->data);
+       
+       
+       
+       
        
         foreach ($tempproduk->data as $key => $value) {
-            $cek = $this->produkModel->getRecord($value->id_produk);
+            $cek = $this->produkModel->getRecord($value->nama_produk);
+            //var_dump($cek);
+            //die();
+
             if($cek > 0 )
             {
                 $data = [
                     'nama_produk'   =>  $value->nama_produk,
                     'harga'   =>  $value->harga,
-                    'kategori_id'   =>  $value->kategori_id,
-                    'status_id'   => $value->status_id,
+                    'kategori_id'   => $this->kategoriModel->getkategoriidbyname($value->kategori),
+                    'status_id'   => $this->statusModel->getstatusidbyname($value->status),
                 ];
                 
                 // Inserts data and returns inserted row's primary key
@@ -222,8 +233,8 @@ class Produk extends BaseController
                     'id_produk' =>  $value->id_produk,
                     'nama_produk'   =>  $value->nama_produk,
                     'harga'   =>  $value->harga,
-                    'kategori_id'   =>  $value->kategori_id,
-                    'status_id'   => $value->status_id,
+                    'kategori_id'   => $this->kategoriModel->getkategoriidbyname($value->kategori),
+                    'status_id'   => $this->statusModel->getstatusidbyname($value->status),
                 ];
                 
                 // Inserts data and returns inserted row's primary key
@@ -235,11 +246,14 @@ class Produk extends BaseController
              
         /* close curl */
         curl_close($curl);
+        $this->session->setFlashdata('success','Sinkron data sukses' );	
           
         } catch (\Exception $e) {
-            echo 'Message: ' .$e->getMessage();
+           // echo 'Message: ' .$e->getMessage();
+            $this->session->setFlashdata('error',"gagal sinkron data" );			
         }
-          
+        //return redirect()->back()->withInput(); 
+        $this->response->redirect(site_url($this->data['controller']));
        
 
    }

@@ -20,6 +20,12 @@ class Kategori extends BaseController
         $this->data['controller'] = 'kategori';
         $this->data['session'] = $this->session;
 
+        if($this->session->get('logged_in')==null) 
+		{
+			header('Location: '.base_url());
+			exit();
+		}
+
 	}
 	
 	public function getIndex()

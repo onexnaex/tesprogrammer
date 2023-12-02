@@ -66,11 +66,19 @@ class ProdukModel extends Model {
 		return $query->getResult();
 	}
 
-	public function getRecord($id)
+	public function getRecord($namaproduk)
 	{
 		$db      = \Config\Database::connect();
 		$builder = $db->table($this->table);
-		$builder->where('id_produk',$id);
+		$builder->where('nama_produk',$namaproduk);
+		$query = $builder->countAllResults();
+		return $query;
+	}
+
+	public function totalrecord()
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table($this->table);
 		$query = $builder->countAllResults();
 		return $query;
 	}

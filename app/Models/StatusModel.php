@@ -41,5 +41,38 @@ class StatusModel extends Model {
 
 		return (object)$columns;
 	}
+
+	public function getstatusidbyname($name)
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table($this->table);
+		$builder->where('nama_status',$name);
+		$query = $builder->countAllResults();
+
+		if ($query > 0)
+		{
+			$db      = \Config\Database::connect();
+			$builder = $db->table($this->table);
+			$builder->where('nama_status',$name);
+			$query = $builder->get();
+			
+			foreach ($query->getResult() as $row) {
+				return $row->id_status;
+			}
+		}
+		else
+		{
+			return 0;
+		}
+
+	}
+
+	public function totalrecord()
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table($this->table);
+		$query = $builder->countAllResults();
+		return $query;
+	}
 	
 }

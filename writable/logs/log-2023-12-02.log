@@ -1,0 +1,81 @@
+CRITICAL - 2023-12-02 16:21:49 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 252.
+ 1 SYSTEMPATH\CodeIgniter.php(252): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(214): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2023-12-02 16:21:49 --> Uncaught Error: Class "Locale" not found in C:\xampp8\htdocs\tesprogrammer\system\I18n\TimeTrait.php:74
+Stack trace:
+#0 C:\xampp8\htdocs\tesprogrammer\system\I18n\TimeTrait.php(115): CodeIgniter\I18n\Time->__construct(NULL, NULL, NULL)
+#1 C:\xampp8\htdocs\tesprogrammer\system\HTTP\ResponseTrait.php(468): CodeIgniter\I18n\Time::now()
+#2 C:\xampp8\htdocs\tesprogrammer\system\HTTP\ResponseTrait.php(446): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\xampp8\htdocs\tesprogrammer\system\Debug\ExceptionHandler.php(81): CodeIgniter\HTTP\Response->send()
+#4 C:\xampp8\htdocs\tesprogrammer\system\Debug\Exceptions.php(148): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\FrameworkException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\FrameworkException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\FrameworkException
+The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp8\htdocs\tesprogrammer\system\CodeIgniter.php(252): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp8\htdocs\tesprogrammer\system\CodeIgniter.php(214): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp8\htdocs\tesprogrammer\spark(88): CodeIgniter\CodeIgniter->initialize()
+#3 {main}
+in SYSTEMPATH\I18n\TimeTrait.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-02 16:22:25 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 252.
+ 1 SYSTEMPATH\CodeIgniter.php(252): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(214): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(88): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2023-12-02 16:22:25 --> Uncaught Error: Class "Locale" not found in C:\xampp8\htdocs\tesprogrammer\system\I18n\TimeTrait.php:74
+Stack trace:
+#0 C:\xampp8\htdocs\tesprogrammer\system\I18n\TimeTrait.php(115): CodeIgniter\I18n\Time->__construct(NULL, NULL, NULL)
+#1 C:\xampp8\htdocs\tesprogrammer\system\HTTP\ResponseTrait.php(468): CodeIgniter\I18n\Time::now()
+#2 C:\xampp8\htdocs\tesprogrammer\system\HTTP\ResponseTrait.php(446): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\xampp8\htdocs\tesprogrammer\system\Debug\ExceptionHandler.php(81): CodeIgniter\HTTP\Response->send()
+#4 C:\xampp8\htdocs\tesprogrammer\system\Debug\Exceptions.php(148): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\FrameworkException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\FrameworkException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\FrameworkException
+The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp8\htdocs\tesprogrammer\system\CodeIgniter.php(252): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp8\htdocs\tesprogrammer\system\CodeIgniter.php(214): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp8\htdocs\tesprogrammer\spark(88): CodeIgniter\CodeIgniter->initialize()
+#3 {main}
+in SYSTEMPATH\I18n\TimeTrait.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-02 22:32:31 --> Undefined constant "App\Controllers\bisakoding"
+in APPPATH\Controllers\Produk.php on line 192.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Produk->getSynproduk()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp8\\htdocs\\tesprogrammer\\public\\index.php')
+CRITICAL - 2023-12-02 15:35:22 --> syntax error, unexpected identifier "curl_setopt", expecting "]"
+in APPPATH\Controllers\Produk.php on line 195.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\tesprogrammer\\app\\Controllers\\Produk.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Produk')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Produk')
+ 4 SYSTEMPATH\Router\AutoRouterImproved.php(164): class_exists('\\App\\Controllers\\Produk')
+ 5 SYSTEMPATH\Router\AutoRouterImproved.php(268): CodeIgniter\Router\AutoRouterImproved->searchFirstController()
+ 6 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouterImproved->getRoute('produk/synproduk', 'get')
+ 7 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('produk/synproduk')
+ 8 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('produk/synproduk')
+ 9 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp8\\htdocs\\tesprogrammer\\public\\index.php')
+CRITICAL - 2023-12-02 16:31:13 --> Undefined variable $instansi
+in APPPATH\Views\dashboard\index.php on line 7.
+ 1 APPPATH\Views\dashboard\index.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $instansi', 'C:\\xampp8\\htdocs\\tesprogrammer\\app\\Views\\dashboard\\index.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp8\\htdocs\\tesprogrammer\\app\\Views\\dashboard\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 5 APPPATH\Controllers\dashboard.php(33): view('dashboard/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->getIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp8\\htdocs\\tesprogrammer\\public\\index.php')

@@ -41,5 +41,38 @@ class KategoriModel extends Model {
 
 		return (object)$columns;
 	}
+
+	public function getkategoriidbyname($name)
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table($this->table);
+		$builder->where('nama_kategori',$name);
+		$query = $builder->countAllResults();
+
+		if ($query > 0)
+		{
+			$db      = \Config\Database::connect();
+			$builder = $db->table($this->table);
+			$builder->where('nama_kategori',$name);
+			$query = $builder->get();
+			
+			foreach ($query->getResult() as $row) {
+				return $row->id_kategori;
+			}
+		}
+		else
+		{
+			return 0;
+		}
+
+	}
+
+	public function totalrecord()
+	{
+		$db      = \Config\Database::connect();
+		$builder = $db->table($this->table);
+		$query = $builder->countAllResults();
+		return $query;
+	}
 	
 }

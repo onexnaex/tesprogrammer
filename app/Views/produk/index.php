@@ -6,12 +6,14 @@
       <div class="card">
         <div class="card-header">
           <div class="row">
-            <div class="col-10 mt-2">
+            <div class="col-9 mt-2">
               <h3 class="card-title"><?php echo $title;?></h3>
             </div>
-            <div class="col-2" style="text-align:right;">
-              <a href="<?php echo site_url($controller.'/synproduk');?>" class="btn float-right btn-warning"  title="SYN Data"> <i class="fa fa-refresh"></i>  Syn Data</a>
+            <div class="col-3" style="text-align:right;">
+              
               <a href="<?php echo site_url($controller.'/add');?>" class="btn float-right btn-success"  title="<?= lang("App.new") ?>"> <i class="fa fa-plus"></i>   <?= lang('App.new') ?></a>
+             
+              <a href="<?php echo site_url($controller.'/synproduk');?>" class="btn float-right btn-warning" style="margin-right:5%;"  title="SYN Data"> <i class="fa fa-refresh"></i>  Syn Data</a>
             </div>
           </div>
         </div>

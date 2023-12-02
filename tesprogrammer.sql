@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100132
+ Source Server Version : 100428 (10.4.28-MariaDB)
  Source Host           : localhost:3306
  Source Schema         : tesprogrammer
 
  Target Server Type    : MySQL
- Target Server Version : 100132
+ Target Server Version : 100428 (10.4.28-MariaDB)
  File Encoding         : 65001
 
- Date: 01/12/2023 16:58:36
+ Date: 02/12/2023 23:49:58
 */
 
 SET NAMES utf8mb4;
@@ -35,7 +35,7 @@ CREATE TABLE `instansi`  (
 -- ----------------------------
 -- Records of instansi
 -- ----------------------------
-INSERT INTO `instansi` VALUES (1, 'FAST PRINT INDONESIA', '-', '-', 'app\\logo.png', 'Warehouse', '1.');
+INSERT INTO `instansi` VALUES (1, 'FAST PRINT INDONESIA', 'Jl. Mojo Kidul 171, Mojo,\r\nKec. Gubeng,\r\nSurabaya, Jawa Timur 60285', '085231876597', 'app\\logo.png', 'Warehouse', '1.');
 
 -- ----------------------------
 -- Table structure for kategori
@@ -45,12 +45,18 @@ CREATE TABLE `kategori`  (
   `id_kategori` int NOT NULL AUTO_INCREMENT,
   `nama_kategori` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_kategori`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of kategori
 -- ----------------------------
-INSERT INTO `kategori` VALUES (1, 'tes1');
+INSERT INTO `kategori` VALUES (1, 'L QUEENLY');
+INSERT INTO `kategori` VALUES (2, 'L MTH AKSESORIS (IM)');
+INSERT INTO `kategori` VALUES (3, 'L MTH TABUNG (LK)');
+INSERT INTO `kategori` VALUES (4, 'SP MTH SPAREPART (LK)');
+INSERT INTO `kategori` VALUES (5, 'CI MTH TINTA LAIN (IM)');
+INSERT INTO `kategori` VALUES (6, 'L MTH AKSESORIS (LK)');
+INSERT INTO `kategori` VALUES (7, 'S MTH STEMPEL (IM)');
 
 -- ----------------------------
 -- Table structure for produk
@@ -67,12 +73,56 @@ CREATE TABLE `produk`  (
   INDEX `produk_ibfk_1`(`kategori_id` ASC) USING BTREE,
   CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id_kategori`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `produk_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `status` (`id_status`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of produk
 -- ----------------------------
-INSERT INTO `produk` VALUES (1, 'tes', 1, 1, 3);
+INSERT INTO `produk` VALUES (1, 'ALCOHOL GEL POLISH CLEANSER GP-CLN01', 12500, 1, 1);
+INSERT INTO `produk` VALUES (2, 'ALUMUNIUM FOIL ALL IN ONE BULAT 23mm IM', 1000, 2, 1);
+INSERT INTO `produk` VALUES (3, 'ALUMUNIUM FOIL ALL IN ONE BULAT 30mm IM', 1000, 2, 1);
+INSERT INTO `produk` VALUES (4, 'ALUMUNIUM FOIL ALL IN ONE SHEET 250mm IM', 12500, 2, 2);
+INSERT INTO `produk` VALUES (5, 'ALUMUNIUM FOIL HDPE/PE BULAT 23mm IM', 12500, 2, 1);
+INSERT INTO `produk` VALUES (6, 'ALCOHOL GEL POLISH CLEANSER GP-CLN01', 12500, 1, 1);
+INSERT INTO `produk` VALUES (7, 'ALUMUNIUM FOIL HDPE/PE SHEET 250mm IM', 13000, 2, 2);
+INSERT INTO `produk` VALUES (8, 'ALUMUNIUM FOIL PET SHEET 250mm IM', 1000, 2, 2);
+INSERT INTO `produk` VALUES (9, 'ALUMUNIUM FOIL ALL IN ONE BULAT 23mm IM', 1000, 2, 1);
+INSERT INTO `produk` VALUES (10, 'ARM SUPPORT KECIL', 13000, 3, 2);
+INSERT INTO `produk` VALUES (11, 'ALUMUNIUM FOIL ALL IN ONE BULAT 30mm IM', 1000, 2, 1);
+INSERT INTO `produk` VALUES (12, 'ALUMUNIUM FOIL ALL IN ONE SHEET 250mm IM', 12500, 2, 2);
+INSERT INTO `produk` VALUES (13, 'ARM SUPPORT S IM', 1000, 2, 2);
+INSERT INTO `produk` VALUES (14, 'ARM SUPPORT T (IMPORT)', 13000, 2, 1);
+INSERT INTO `produk` VALUES (15, 'ALUMUNIUM FOIL HDPE/PE BULAT 23mm IM', 12500, 2, 1);
+INSERT INTO `produk` VALUES (16, 'BLACK LASER TONER FP-T3 (100gr)', 13000, 2, 2);
+INSERT INTO `produk` VALUES (17, 'ALUMUNIUM FOIL HDPE/PE BULAT 30mm IM', 1000, 2, 1);
+INSERT INTO `produk` VALUES (18, 'ALUMUNIUM FOIL HDPE/PE SHEET 250mm IM', 13000, 2, 2);
+INSERT INTO `produk` VALUES (19, 'ALUMUNIUM FOIL PET SHEET 250mm IM', 1000, 2, 2);
+INSERT INTO `produk` VALUES (20, 'BOTOL 1000ML CYAN KHUSUS UNTUK EPSON R1800/R800/R1900/R2000 - 4120 IM (T054220)', 10000, 5, 2);
+INSERT INTO `produk` VALUES (21, 'BOTOL 1000ML GLOSS OPTIMIZER KHUSUS UNTUK EPSON R1800/R800/R1900/R2000/IX7000/MG6170 - 4100 IM (T054020)', 1500, 5, 1);
+INSERT INTO `produk` VALUES (22, 'ARM PENDEK MODEL U', 13000, 2, 1);
+INSERT INTO `produk` VALUES (23, 'ARM SUPPORT KECIL', 13000, 3, 2);
+INSERT INTO `produk` VALUES (24, 'ARM SUPPORT KOTAK PUTIH', 13000, 2, 2);
+INSERT INTO `produk` VALUES (25, 'BOTOL 1000ML MATTE BLACK KHUSUS UNTUK EPSON R1800/R800/R1900/R2000 - 3503 IM (T054820)', 1500, 5, 2);
+INSERT INTO `produk` VALUES (26, 'ARM SUPPORT PENDEK POLOS', 13000, 3, 1);
+INSERT INTO `produk` VALUES (27, 'ARM SUPPORT S IM', 1000, 2, 2);
+INSERT INTO `produk` VALUES (28, 'ARM SUPPORT T (IMPORT)', 13000, 2, 1);
+INSERT INTO `produk` VALUES (29, 'ARM SUPPORT T - MODEL 1 ( LOKAL )', 10000, 3, 1);
+INSERT INTO `produk` VALUES (30, 'BOTOL 10ML IM', 1000, 7, 2);
+INSERT INTO `produk` VALUES (31, 'ALUMUNIUM FOIL HDPE/PE BULAT 30mm IM', 1000, 2, 1);
+INSERT INTO `produk` VALUES (32, 'ARM PENDEK MODEL U', 13000, 2, 1);
+INSERT INTO `produk` VALUES (33, 'ARM SUPPORT KOTAK PUTIH', 13000, 2, 2);
+INSERT INTO `produk` VALUES (34, 'ARM SUPPORT PENDEK POLOS', 13000, 3, 1);
+INSERT INTO `produk` VALUES (35, 'ARM SUPPORT T - MODEL 1 ( LOKAL )', 10000, 3, 1);
+INSERT INTO `produk` VALUES (36, 'BODY PRINTER T13X', 15000, 4, 1);
+INSERT INTO `produk` VALUES (37, 'BOTOL 1000ML BLUE KHUSUS UNTUK EPSON R1800/R800 - 4180 IM (T054920)', 10000, 5, 1);
+INSERT INTO `produk` VALUES (38, 'BOTOL 1000ML LIGHT BLACK KHUSUS UNTUK EPSON 2400 - 0597 IM', 1500, 5, 2);
+INSERT INTO `produk` VALUES (39, 'BOTOL 1000ML RED KHUSUS UNTUK EPSON R1800/R800/R1900/R2000 - 4170 IM (T054720)', 1000, 5, 2);
+INSERT INTO `produk` VALUES (40, 'BOTOL 1000ML YELLOW KHUSUS UNTUK EPSON R1800/R800/R1900/R2000 - 4160 IM (T054420)', 1500, 5, 2);
+INSERT INTO `produk` VALUES (41, 'BODY PRINTER CANON IP2770', 500, 4, 1);
+INSERT INTO `produk` VALUES (42, 'BOTOL 1000ML L.LIGHT BLACK KHUSUS UNTUK EPSON 2400 - 0599 IM', 1500, 5, 2);
+INSERT INTO `produk` VALUES (43, 'BOTOL 1000ML MAGENTA KHUSUS UNTUK EPSON R1800/R800/R1900/R2000 - 4140 IM (T054320)', 1000, 5, 1);
+INSERT INTO `produk` VALUES (44, 'BOTOL 1000ML ORANGE KHUSUS UNTUK EPSON R1900/R2000 IM - 4190 (T087920)', 1500, 5, 1);
+INSERT INTO `produk` VALUES (45, 'BOTOL KOTAK 100ML LK', 1000, 6, 1);
 
 -- ----------------------------
 -- Table structure for status
@@ -82,12 +132,13 @@ CREATE TABLE `status`  (
   `id_status` int NOT NULL AUTO_INCREMENT,
   `nama_status` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_status`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of status
 -- ----------------------------
-INSERT INTO `status` VALUES (3, 'tes');
+INSERT INTO `status` VALUES (1, 'bisa dijual');
+INSERT INTO `status` VALUES (2, 'tidak bisa dijual');
 
 -- ----------------------------
 -- Table structure for tb_group
@@ -166,7 +217,7 @@ CREATE TABLE `tb_user`  (
 -- ----------------------------
 -- Records of tb_user
 -- ----------------------------
-INSERT INTO `tb_user` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', '', '2023-12-01 07:10:41', '1', 1, 1);
+INSERT INTO `tb_user` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', '', '2023-12-02 16:49:22', '1', 1, 1);
 INSERT INTO `tb_user` VALUES (2, 'pegawai', '047aeeb234644b9e2d4138ed3bc7976a', 'pegawai@pegawai.com', '', NULL, '123456', 2, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

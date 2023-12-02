@@ -23,6 +23,12 @@ class User extends BaseController
 		$this->data['controller'] = 'user';
 		$this->data['session'] = $this->session;
 		$this->data['group'] = $this->groupModel->findAll();
+
+		if($this->session->get('logged_in')==null) 
+		{
+			header('Location: '.base_url());
+			exit();
+		}
 		
 	}
 	
