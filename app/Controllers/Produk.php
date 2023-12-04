@@ -51,7 +51,7 @@ class Produk extends BaseController
     {
         if (!empty($id))
         {
-            $this->data['model'] = $this->produkModel->where('id',$id)->first();
+            $this->data['model'] = $this->produkModel->where('id_produk',$id)->first();
         }
         else
         {
